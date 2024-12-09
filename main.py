@@ -25,7 +25,7 @@ class main():
   # Use BeautifulSoup to parse the HTML
   soup = BeautifulSoup(site.content, 'html.parser')
 
-  results = soup.find(id='ResultContainer') # id mw-pages 
+  results = soup.find(id='ResultsContainer') # id mw-pages 
   # print(results.prettify())
 
   job_cards = results.find_all('div', class_='card-content')
