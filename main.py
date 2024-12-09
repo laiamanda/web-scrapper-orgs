@@ -10,8 +10,8 @@ from bs4 import BeautifulSoup
 class main():
   print('Running web-scrapper-orgs')
 
-  # url = 'https://realpython.github.io/fake-jobs/'
-  url = 'https://en.wikipedia.org/wiki/Category:Non-profit_organizations_based_in_the_United_States'
+  url = 'https://realpython.github.io/fake-jobs/'
+  #  url = 'https://en.wikipedia.org/wiki/Category:Non-profit_organizations_based_in_the_United_States'
   headers = {'User-Agent': 'Mozilla/5.0'}
 
   # Make a request to a website
@@ -24,24 +24,20 @@ class main():
 
   # Use BeautifulSoup to parse the HTML
   soup = BeautifulSoup(site.content, 'html.parser')
-  # results = soup.find(class_='mw-category mw-category-columns')
+
+  results = soup.find(id='ResultContainer') # id mw-pages 
   # print(results.prettify())
 
-  results = soup.find('div', id='mw-pages')
-  print(results.prettify())
+  job_cards = results.find_all('div', class_='card-content')
 
-  # content = soup.find_all('p')
-
-  # job_cards = results.find_all('div', class_='card-content')
-
-  # for job_card in job_cards:
-  #   title_element = job_card.find("h2", class_="title")
-  #   company_element = job_card.find("h3", class_="company")
-  #   location_element = job_card.find("p", class_="location")
+  for job_card in job_cards:
+    title_element = job_card.find("h2", class_="title")
+    company_element = job_card.find("h3", class_="company")
+    location_element = job_card.find("p", class_="location")
     
-  #   print(title_element)
-  #   print(company_element)
-  #   print(location_element)
+    print(title_element)
+    print(company_element)
+    print(location_element)
 
 
 if __name__ == '__main__':
