@@ -30,6 +30,10 @@ class main():
   try: 
     for page in pages:
       text = page.get_text().encode('utf-8')
+      # TO DO: Find a way to decode it but allowing all character to pass thur from multiple different languages
+      # that's not supported by
+      # text = page.get_text().decode('utf-8', 'ignore')
+      # Manually insert it into a text file and configure the names from there, because unable to decode it
       print(text)
   except Exception as error :
     print(error)
