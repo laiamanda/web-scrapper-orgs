@@ -13,8 +13,7 @@ from bs4 import BeautifulSoup
 class main():
   print('Running web-scrapper-orgs')
 
-  fileHandling.findOrgsFile()
-  # fileHandling.insertIntoFile()
+  fileHandling.insertIntoFile()
 
   # # url = 'https://realpython.github.io/fake-jobs/'
   # # url = 'https://en.wikipedia.org/wiki/Web_scraping'

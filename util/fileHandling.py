@@ -1,5 +1,4 @@
 import os
-import glob
 
 # Retrieve the location path of the main directory - Not Being Used
 def getMainDirectory():
@@ -16,6 +15,9 @@ def findOrgsFile():
         f.close()
 
 def insertIntoFile():
-    test = ['a', 'b', 'c']
-    for value in test:
-        print(value) 
+    # test = ['a', 'b', 'c']
+    # for value in test:
+    #     print(value) 
+    f = open("orgs.txt", "w")
+    f.write("Test")
+    f.close()
