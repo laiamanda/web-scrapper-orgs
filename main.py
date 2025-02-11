@@ -8,16 +8,9 @@ import requests
 from util import fileHandling, db
 from bs4 import BeautifulSoup
 
-from dotenv import load_dotenv
-import os
-
-# Load environment variables from .env file
-load_dotenv()
-
-
 class main():
   print('Running web-scrapper-orgs')
-  db.conn()
+  # db.insertDatabase()
 
   # url = 'https://en.wikipedia.org/wiki/Category:Non-profit_organizations_based_in_the_United_States'
   # headers = {'User-Agent': 'Mozilla/5.0'}
