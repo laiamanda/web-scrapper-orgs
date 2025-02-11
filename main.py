@@ -11,12 +11,7 @@ from bs4 import BeautifulSoup
 class main():
   print('Running web-scrapper-orgs')
 
-  # fileHandling.insertIntoFile("test")
-
-  # url = 'https://realpython.github.io/fake-jobs/'
-  # url = 'https://en.wikipedia.org/wiki/Web_scraping'
-  url = 'https://en.wikipedia.org/w/index.php?title=Category:Non-profit_organizations_based_in_the_United_States&pagefrom=Watch+Duty#mw-pages'
-  # 'https://en.wikipedia.org/wiki/Category:Non-profit_organizations_based_in_the_United_States'
+  url = 'https://en.wikipedia.org/wiki/Category:Non-profit_organizations_based_in_the_United_States'
   headers = {'User-Agent': 'Mozilla/5.0'}
 
   # Make a request to a website
@@ -32,11 +27,12 @@ class main():
   pages = soup.find(id='mw-pages').find_all('li')
 
   try: 
+    # Loop through all the pages
     for page in pages:
-      # Manually insert it into a text file
+      # Manually insert the companyName into a text file
       fileHandling.insertIntoFile(page.get_text())
   except Exception as error :
-    print(error)
+    print("[ERROR]: " + error)
 
 if __name__ == '__main__':
   main()
