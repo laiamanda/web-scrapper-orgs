@@ -17,13 +17,16 @@ def findOrgsFile():
         return
     
 # Append items into Orgs File
-def insertIntoFile():
-    # Opens the Orgs File to Append
-    f = open("orgs.txt", "a")
-    # Dummy Values
-    test = ['a', 'b', 'c']
-    # Loop through Values
-    for value in test:
-        f.write(value + "\n")
-    f.close()
+def insertIntoFile(companyName):
+    # my_list = ['Dejan Živković','Gregg Berhalter','James Stevens','Mike Windischmann',
+    #             'Gunnar Heiðar Þorvaldsson']
+    
+    # # Opens the Orgs File to Append
+    # with open("newOrgs.txt", "a", encoding="utf-8") as file:
+    #     file.writelines( "%s\n" % item for item in my_list )
+    
+   # Opens the Orgs File to Append
+    with open("orgs.txt", "a", encoding="utf-8") as file:
+        # Able to write each company name. Can handle non-ascii code
+        file.write( "%s\n" % companyName )
     return
