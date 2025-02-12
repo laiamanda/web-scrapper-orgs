@@ -22,8 +22,15 @@ def insertDatabase(name):
   
     cursor = connection.cursor()
 
-    cursor.execute("INSERT INTO organizations.entries(name) VALUES (%s)", (name,))
+    try:
+        # Insert into the database
+        cursor.execute("INSERT INTO organizations.entries(name) VALUES (%s)", (name,))
+        print('Successfully insert into organizations')
+    except Exception as error:
+        print('Failed to insert into database')
+        print(error)
 
-    print('Finished')
+    # Commit the change
     connection.commit()
+    # Close the connection
     connection.close()
