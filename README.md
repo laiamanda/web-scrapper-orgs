@@ -1,10 +1,13 @@
 # Web-scrapper-orgs
 
 ## Description
-A python program that scrapes for organization
+A python program that scrapes for organization and insert it into database
 
 ### Set-up
 * Clone git repo
+* Install packages ~ pip install -r requirements.txt
+
+If everything is successful, you can run the program
 
 ### Run Program
 python main.py
