@@ -1,4 +1,5 @@
 import os
+from util import db
 
 # Retrieve the location path of the main directory - Not Being Used
 def getMainDirectory():
@@ -18,15 +19,16 @@ def findOrgsFile():
     
 # Append items into Orgs File
 def insertIntoFile(companyName):
-    # my_list = ['Dejan Živković','Gregg Berhalter','James Stevens','Mike Windischmann',
-    #             'Gunnar Heiðar Þorvaldsson']
-    
-    # # Opens the Orgs File to Append
-    # with open("newOrgs.txt", "a", encoding="utf-8") as file:
-    #     file.writelines( "%s\n" % item for item in my_list )
-    
    # Opens the Orgs File to Append
     with open("orgs.txt", "a", encoding="utf-8") as file:
         # Able to write each company name. Can handle non-ascii code
         file.write( "%s\n" % companyName )
     return
+
+# Read the Orgs File
+def readFile():
+    with open("orgs.txt","r", encoding="utf-8") as file:
+        for name in file:
+            # Insert each name from the text file to the database
+            db.insertDatabase(name)
+    

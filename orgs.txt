@@ -157,7 +157,7 @@ Heritage Preservation
 Heroic Imagination Project
 Hip Hop Caucus
 History Cooperative
-Hoʻokuaʻāina
+---
 Hollywood Foreign Press Association
 Home Recording Rights Coalition
 Homeboyz Interactive
@@ -416,4 +416,3 @@ Year Up
 Youth Leadership Camp
 Zeno Mountain Farm
 The Zigen Fund
-Zionist Organization of America

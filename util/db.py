@@ -5,7 +5,7 @@ import os
 # Load environment variables from .env file
 load_dotenv()
 
-def insertDatabase():
+def insertDatabase(name):
     # Retrieve database information from .env file
     db_database = os.getenv('DB_DATABASE')
     db_host = os.getenv('DB_HOST')
@@ -22,10 +22,8 @@ def insertDatabase():
   
     cursor = connection.cursor()
 
-    # cursor.execute("INSERT INTO organizations.entries (name) VALUES(%s);" %name)
+    cursor.execute("INSERT INTO organizations.entries(name) VALUES (%s)", (name,))
 
-    record = cursor.fetchall()
-    print("Data from Database: - ", record)
-
+    print('Finished')
     connection.commit()
     connection.close()
