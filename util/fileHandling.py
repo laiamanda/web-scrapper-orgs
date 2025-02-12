@@ -13,6 +13,7 @@ def findOrgsFile():
     if(os.path.exists("orgs.txt")): 
         return
     else :
+        # Else, create the orgs file
         f = open("orgs.txt", "x")
         f.close()
         return
